@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>web 目录浏览</title>
+    <style>
+        .mono-table {
+            font-family: monospace, monospace;
+            white-space: pre;
+            letter-spacing: 0.1em;
+        }
+
+        .mono-table td {
+            padding: 0 0.5em;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>{h3}</h3>
+    <hr>
+    <p>{time}</p> <!-- 开始时间 -->
+    <p>{file_var}</p> <!-- 文件，夹数量 -->
+    <p>{server_path}</p> <!-- 服务器内部路径 -->
+    <a href="#" id="backLink" class="back-link">返回上一级目录</a>
+
+    <script>
+        document.getElementById('backLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            let currentPath = window.location.pathname;
+            currentPath = currentPath.replace(/\/$/, '');
+            let pathParts = currentPath.split('/');
+            pathParts.pop();
+            let parentPath = pathParts.join('/');
+            if (parentPath === '') parentPath = '/';
+            window.location.href = window.location.origin + parentPath;
+        });
+    </script>
+    <hr>
+        <table class="mono-table">
+            <tr>
+                <td style="width: 6cn">type</td>
+                <td style="width: 60cn">name</td>
+                <td style="width: 30cn">size</td>
+                <td style="width: 30cn">time</td>
+            </tr>
+            <tr></tr>
+            {file}
+        </table>
+    <hr>
+
+    <p align="center">Powered by Da_nuo & Branulf</p>
+</body>
+</html>
+
+
+
+
