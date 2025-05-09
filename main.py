@@ -3,10 +3,12 @@ from datetime import datetime
 from flask import Flask, render_template, request, send_file, jsonify
 import make_html
 import return_api
+import config
 
 app = Flask(__name__)
 
-root = "D:\\"
+
+root = config.getroot()
 
 @app.route('/')
 def home():
@@ -65,4 +67,4 @@ def api(subpath=None):
     return jsonify(return_p)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=41040)
+    app.run(debug=config.getdebug(), port=config.getport())
