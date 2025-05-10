@@ -1,7 +1,7 @@
 from jinja2 import Environment, FileSystemLoader
 
 import config
-from file import file
+import file
 
 # 创建模板环境
 env = Environment(
@@ -10,6 +10,15 @@ env = Environment(
     trim_blocks=True,  # 去除块首尾空白
     lstrip_blocks=True  # 去除块左侧空白
 )
+
+
+if config.web_language == "zh_cn":
+    with open('templates\\zh_ch_moban.html', 'r', encoding='utf-8') as files:
+        template = files.read()
+else:
+    with open('templates\\en_us_moban.html', 'r', encoding='utf-8') as files:
+        template = files.read()
+
 
 def make_file(file_list, requests_url):
     c = []
@@ -49,29 +58,16 @@ def make(p, url, time, server_p):
     else:
         server_p = "root/ " + server_p
 
-    with open('templates\\zh_ch_moban.html', 'r', encoding='utf-8') as files:
-        template = files.read()
-
     files = make_file(get_p, url)
 
-    # 定义替换数据
+    data = {
+        "{h3}": url,
+        "{time}": time,
+        "{file_var}": str(len(get_p)),
+        "{server_path}": "" + server_p,
+        "{file}": files
+    }
 
-    if config.getlanguage() == "zh_cn":
-        data = {
-            "{h3}": "当前路径： "+url,
-            "{time}": "请求开始时间： "+time,
-            "{file_var}": "文件（夹）数量： " + str(len(get_p)),
-            "{server_path}": "服务器内部路径： " + server_p,
-            "{file}": files
-        }
-    else:
-        data = {
-            "{h3}": "now path： " + url,
-            "{time}": "Request start time： " + time,
-            "{file_var}": "Number of files, folders ： " + str(len(get_p)),
-            "{server_path}": "Server internal path ： " + server_p,
-            "{file}": files
-        }
     # 执行替换
     modified_html = template
     for placeholder, value in data.items():

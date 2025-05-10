@@ -1,12 +1,12 @@
 from datetime import datetime
 
-from flask import Flask, render_template, request, send_file, jsonify
+from flask import Flask, render_template, request, send_file, jsonify, abort
 import make_html
 import return_api
 import config
+import log
 
 app = Flask(__name__)
-
 
 root = config.getroot()
 
@@ -21,8 +21,10 @@ def home():
 def webs(subpath=None):
     request_time = datetime.now()
     formatted_time = request_time.strftime('%Y-%m-%d %H:%M:%S')
+    if subpath == "serviceworker.js":
+        abort(204)
 
-    if (subpath is None) or (subpath == "serviceworker.js"):
+    if subpath is None:
         p = root
     else:
         if root[-1] == "\\" or "/":
@@ -46,9 +48,10 @@ def webs(subpath=None):
 def api(subpath=None):
     request_time = datetime.now()
     formatted_time = request_time.strftime('%Y-%m-%d %H:%M:%S')
+    if subpath == "serviceworker.js":
+        abort(204)
 
-
-    if (subpath is None) or (subpath == "serviceworker.js"):
+    if subpath is None:
         p = root
     else:
         if root[-1] == "\\":
@@ -65,6 +68,7 @@ def api(subpath=None):
         return render_template("error.html")
 
     return jsonify(return_p)
+
 
 if __name__ == '__main__':
     app.run(debug=config.getdebug(), port=config.getport())

@@ -1,6 +1,4 @@
-import json
-
-from file import file
+import file
 
 
 def make(path, requests_url, time, server_p):
@@ -14,13 +12,13 @@ def make(path, requests_url, time, server_p):
     if server_p is None:
         server_p = "root\\"
     else:
-        server_p = "root/ " + server_p
+        server_p = "root/" + server_p
 
     b = {
+        "file": get_p,
         "time": time,
         "server_path": server_p,
-        "requests_url": requests_url,
-        "file": get_p
+        "requests_url": requests_url
     }
 
     return b
