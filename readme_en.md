@@ -11,7 +11,7 @@
 * You'll also need to install some python modules, which you can do with the following command
 
 ```
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 * Then run main.py , Under normal circumstances, the project should start successfully

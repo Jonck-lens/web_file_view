@@ -11,7 +11,7 @@
 * 你还需要安装一些python模块，你可以用下面的命令来完成
 
 ```
-PIP install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 * 然后运行main.py，一般情况下，程序应该开始正常运行
