@@ -1,12 +1,12 @@
 # web文件视图
 
 ---
-
+[English](https://github.com/Jonck-lens/web_file_view/blob/master/readme_en.md)<p>
 一个非常简单的项目，使用python 以及 flask开发，可用于临时的web文件浏览需求
 
 ---
 
-## 1。如何使用
+## 1. 如何使用
 * 首先，这个项目需要py，推荐的版本是3.12。
 * 你还需要安装一些python模块，你可以用下面的命令来完成
 

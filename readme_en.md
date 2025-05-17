@@ -1,7 +1,7 @@
 # web file view
 
 ---
-
+[中文](https://github.com/Jonck-lens/web_file_view/blob/master/readme.md)<p>
  A very simple project, developed with python flask, that can be used for temporary web file browsing needs
 
 ---
