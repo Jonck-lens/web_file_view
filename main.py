@@ -1,14 +1,17 @@
 from datetime import datetime
+import config
+
 
 from flask import Flask, render_template, request, send_file, jsonify, abort
 import make_html
 import return_api
-import config
-import log
+
 
 app = Flask(__name__)
+application = app
+root = config.root
 
-root = config.getroot()
+
 
 @app.route('/')
 def home():
@@ -22,7 +25,7 @@ def webs(subpath=None):
     request_time = datetime.now()
     formatted_time = request_time.strftime('%Y-%m-%d %H:%M:%S')
     if subpath == "serviceworker.js":
-        abort(204)
+        abort(404)
 
     if subpath is None:
         p = root
@@ -42,6 +45,7 @@ def webs(subpath=None):
 
     return return_p
 
+
 @app.route("/api/<path:subpath>")
 @app.route('/api')
 @app.route('/api/')
@@ -49,7 +53,7 @@ def api(subpath=None):
     request_time = datetime.now()
     formatted_time = request_time.strftime('%Y-%m-%d %H:%M:%S')
     if subpath == "serviceworker.js":
-        abort(204)
+        abort(404)
 
     if subpath is None:
         p = root
@@ -71,4 +75,5 @@ def api(subpath=None):
 
 
 if __name__ == '__main__':
-    app.run(debug=config.getdebug(), port=config.getport())
+    app.run(debug=config.debug, port=config.port)
+

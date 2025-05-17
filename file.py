@@ -4,20 +4,8 @@ from typing import Any
 
 
 
-def get_file_list(dir_path: str) -> None | list[dict[str, str | int | None | Any] | dict[str, str | int]] | list[
-    Any] | int:
-    """
-    获取目录内容列表（包含文件/文件夹信息）
-    返回格式: [
-        {
-            'name': 名称,
-            'type': '<dir>'或'<file>',
-            'size': 文件大小(字节)，文件夹为None,
-            'create_time': 创建时间
-        },
-        ...
-    ]
-    """
+def get_file_list(dir_path: str) -> None | list[dict[str, str | int | None | Any] | dict[str, str | int]] | list[Any] | int:
+
     try:
         if os.path.isfile(dir_path):
             return 1
