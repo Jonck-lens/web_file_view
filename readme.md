@@ -20,6 +20,7 @@ python -m pip install -r requirements.txt
 ## 2. 其他
 * 1 . 您需要在config.ini中进行更详细的配置
 * 2 . 至于api系统，我还不打算为它制作一个配套应用，因为我认为它不如web方便
+* 3 . 注意：理论上来说，本项目只能在win平台运行
 
 ---
 

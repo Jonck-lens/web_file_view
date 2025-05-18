@@ -20,6 +20,7 @@ python -m pip install -r requirements.txt
 ## 2. Some other things
 * 1 . In addition, you need to do more detailed configuration in config.ini
 * 2 . As for the api system, I'm not going to make a companion app for it yet, because it's probably not as convenient as viewing it directly on the web
+* 3 . Note: Theoretically speaking, this project can only run on the Windows platform
 
 ---
 
