@@ -32,7 +32,7 @@ if True:
                "# root 根路径\n",
                '# 建议路径最后包含”\“，例如”D:\“, "D:\\me\\",因为可能会发生某些意外\n',
                '#(set root path, It is recommended that the path include "\\" at the end, such as "D:\\ ", "D:\\me\\", because something might happen)\n',
-               'root = C:\\users\n',
+               'root = C:\\users\\\n',
                '\n',
                '# 设定是否输出日志（这个选项暂时弃用）\n',
                '# 接受 T(True) F(False)',

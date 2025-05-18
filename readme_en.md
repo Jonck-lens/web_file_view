@@ -2,7 +2,9 @@
 
 ---
 [中文](https://github.com/Jonck-lens/web_file_view/blob/master/readme.md)<p>
- A very simple project, developed with python flask, that can be used for temporary web file browsing needs
+ A very simple project, developed with python flask, that can be used for temporary web file browsing needs</p>
+
+ You can conveniently modify the html template file to customize your page
 
 ---
 

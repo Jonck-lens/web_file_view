@@ -2,7 +2,9 @@
 
 ---
 [English](https://github.com/Jonck-lens/web_file_view/blob/master/readme_en.md)<p>
-一个非常简单的项目，使用python 以及 flask开发，可用于临时的web文件浏览需求
+一个非常简单的项目，使用python 以及 flask开发，可用于临时的web文件浏览需求</p>
+你可以修改html模板文件，从而自定义你的web页面
+
 
 ---
 
