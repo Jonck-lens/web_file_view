@@ -9,7 +9,7 @@ import return_api
 
 app = Flask(__name__)
 application = app
-root = config.rootc
+root = config.root
 
 
 

@@ -24,6 +24,7 @@ python -m pip install -r requirements.txt
 * 2 . As for the api system, I'm not going to make a companion app for it yet, because it's probably not as convenient as viewing it directly on the web
 * 3 . Note: Theoretically speaking, this project can only run on the Windows platform
 
+This is my first project and also my first time publishing a project on GitHub.</p> The project may seem rather poor, but please don't make fun of me for it.
 ---
 
 Finally, if you have any suggestions or questions, please contact me. <p>Thank you
